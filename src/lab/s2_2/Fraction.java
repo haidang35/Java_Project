@@ -7,10 +7,9 @@ public class Fraction{
     public int mauSo;
 
     public Fraction() {
-        tuSo=0;
-        mauSo=1;
-    }
 
+    }
+    
     public int getTuSo() {
         return tuSo;
     }
@@ -50,8 +49,6 @@ public class Fraction{
 
 
         }while(b==0);
-
-
 
     }
     public void InPhanSo(){
