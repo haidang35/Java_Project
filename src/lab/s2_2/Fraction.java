@@ -78,7 +78,7 @@ public class Fraction{
         System.out.println("Nghich dao phan so: "+tuSo+"/"+mauSo);
     }
     public Fraction add(Fraction ps2){
-        int a=tuSo*ps2.mauSo+ ps2.tuSo*mauSo;
+        int a=getTuSo()*ps2.getMauSo()+ ps2.tuSo*mauSo;
         int b=mauSo* ps2.mauSo;
         return new Fraction(a, b);
     }
