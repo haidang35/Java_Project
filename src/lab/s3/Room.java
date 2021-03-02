@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class Room {
     String tenPhong;
     int viTri;
-    ArrayList<String> dSNguoiDung = new ArrayList<String>();
+    ArrayList<String> dSNguoiDung; //= new ArrayList<String>();
 
     public Room(){
-
+          dSNguoiDung = new ArrayList<>(); // cap o nho
     }
     public void themNguoi(String add){
         dSNguoiDung.add(add);

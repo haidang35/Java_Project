@@ -30,12 +30,7 @@ public class Product {
     }
 
     public void setQty(int qty) {
-        if(qty>0){
-            this.qty = qty;
-            System.out.println("San pham con hang");
-        }
-        else
-            System.out.println("San pham het hang");
+        this.qty = qty;
     }
 
     public double getPrice() {
@@ -45,5 +40,10 @@ public class Product {
     public void setPrice(double price) {
         if(price>0)
             this.price = price;
+    }
+    public boolean checkQty(){
+        if(getQty()>0) return true;
+        return false;
+
     }
 }

@@ -14,27 +14,67 @@ public class Cart {
         this.productList = productList;
     }
 
-    public void themSanPham(String name){
-           productList.add(name);
+    public int getId() {
+        return id;
     }
 
-    public void xoaSanPham(String name){
-        for(int i=0;i<productList.size();i++){
-            productList.remove(name);
-        }
+    public void setId(int id) {
+        this.id = id;
     }
-    public void InSanPham(){
-        for(int i=0;i<productList.size();i++){
-            System.out.println(productList.get(i));
-        }
+
+    public String getCustomer() {
+        return customer;
     }
-    public double grandTotal(){
-        double tongTien;
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
+    public double getGrandTotal() {
+        return grandTotal;
+    }
+
+    public void setGrandTotal(double grandTotal) {
+        this.grandTotal = grandTotal;
+    }
+
+    public ArrayList getProductList() {
+        return productList;
+    }
+
+    public void setProductList(ArrayList productList) {
+        this.productList = productList;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void themSanPham(Product prod){
+        if(prod.checkQty()){
+            productList.add(prod);
+            prod.setQty(prod.getQty()-1);
+            setGrandTotal(getGrandTotal()+prod.price);
+        }else
+            System.out.println("Them san pham that bai");
+    }
+
+    public void xoaSanPham(int index){
+        Product prod = new Product();
+        productList.remove(index);
+        prod.setQty(prod.getQty()+1);
+        setGrandTotal(getGrandTotal()-prod.price);
+    }
+
+    public double calgrandTotal(){
         if(city == "HN" || city == "HCM")
-            tongTien = grandTotal + (double)1/100*grandTotal;
+            return  grandTotal + (double)1/100*grandTotal;
         else
-            tongTien =  grandTotal + (double)2/100*grandTotal;
-        return tongTien;
+            return  grandTotal + (double)2/100*grandTotal;
     }
 
 
