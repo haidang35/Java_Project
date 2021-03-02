@@ -6,12 +6,13 @@ public class Cart {
     int id;
     String customer;
     double grandTotal;
-    ArrayList productList = new ArrayList();
+    ArrayList<Product> productList;
     String city;
 
 
     public Cart() {
-        this.productList = productList;
+
+        productList = new ArrayList<>();
     }
 
     public int getId() {
@@ -38,14 +39,6 @@ public class Cart {
         this.grandTotal = grandTotal;
     }
 
-    public ArrayList getProductList() {
-        return productList;
-    }
-
-    public void setProductList(ArrayList productList) {
-        this.productList = productList;
-    }
-
     public String getCity() {
         return city;
     }
@@ -64,17 +57,17 @@ public class Cart {
     }
 
     public void xoaSanPham(int index){
-        Product prod = new Product();
+        Product prod = productList.get(index);
         productList.remove(index);
         prod.setQty(prod.getQty()+1);
         setGrandTotal(getGrandTotal()-prod.price);
     }
 
     public double calgrandTotal(){
-        if(city == "HN" || city == "HCM")
-            return  grandTotal + (double)1/100*grandTotal;
+        if(getCity() == "HN" || getCity() == "HCM")
+            return  grandTotal +grandTotal*1/100;
         else
-            return  grandTotal + (double)2/100*grandTotal;
+            return  grandTotal + grandTotal*2/100;
     }
 
 
