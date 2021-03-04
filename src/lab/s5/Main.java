@@ -13,6 +13,9 @@ public class Main {
         st1.nhapThongTin(sc);
         st1.inThongTin();
         st1.kiemTraHocBong();
-        sc.close();
+
+        Teacher tc = new Teacher();
+        tc.nhapThongTin(sc);
+        tc.inThongTin();
     }
 }
