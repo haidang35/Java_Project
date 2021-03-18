@@ -4,8 +4,7 @@ public class Car implements Vehicle{
     private String name;
     @Override
     public float moveMax() {
-        float maxSpeed=250;
-       return maxSpeed;
+       return 250;
     }
 
     public void setName(String name) {
