@@ -5,14 +5,17 @@ public class Passenger {
     public String name;
     public String address;
     public String phoneNumber;
+    public String goDate;
     public String returnDate;
 
-    public Passenger(Integer id, String name, String address, String phoneNumber, String returnDate) {
+
+    public Passenger(Integer id, String name, String address, String phoneNumber, String returnDate, String goDate) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.returnDate = returnDate;
+        this.goDate = goDate;
     }
 
     public Integer getId() {
@@ -45,6 +48,14 @@ public class Passenger {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getGoDate() {
+        return goDate;
+    }
+
+    public void setGoDate(String goDate) {
+        this.goDate = goDate;
     }
 
     public String getReturnDate() {
