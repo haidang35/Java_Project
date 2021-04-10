@@ -1,5 +1,6 @@
 package pratical.adf2;
 
+import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
@@ -72,7 +73,9 @@ public class ReservationSystem {
         }
     }
     public void displayPassengerRecords(){
-        for(Passenger pas: listPassengers){
+        Iterator<Passenger> i = listPassengers.iterator();
+        while (i.hasNext()){
+            Passenger pas = listPassengers.poll();
             System.out.println("ID hành khách: " + pas.getId());
             System.out.println("Tên hành khách: " + pas.getName());
             System.out.println("Địa chỉ: " + pas.getAddress());
