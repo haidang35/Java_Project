@@ -7,15 +7,15 @@ public class ReservationSystem {
     public PriorityQueue<Passenger> listPassengers = new PriorityQueue<>();
 
     public void addReservation(Scanner sc){
-        System.out.println("Nhập ID đặt chỗ");
+        System.out.print("Nhập ID đặt chỗ: ");
         Integer id = sc.nextInt();
-        System.out.println("Nhập tên hành khách");
+        System.out.print("Nhập tên hành khách: ");sc.nextLine();
         String namePassenger = sc.nextLine();
-        System.out.println("Nhập địa chỉ");
+        System.out.print("Nhập địa chỉ: ");
         String address = sc.nextLine();
-        System.out.println("Nhập số điện thoại");
+        System.out.print("Nhập số điện thoại: ");
         String phoneNumber = sc.nextLine();
-        System.out.println("Nhập ngày đi và về");
+        System.out.print("Nhập ngày đi và về: ");
         String returnDate = sc.nextLine();
         Passenger pas = new Passenger(id, namePassenger, address, phoneNumber, returnDate);
         listPassengers.add(pas);
