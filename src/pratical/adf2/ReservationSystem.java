@@ -61,13 +61,13 @@ public class ReservationSystem {
                 System.out.println("Ngày đi là: " + pas.getGoDate());
                 System.out.println("Ngày về là: "+pas.getReturnDate());
                 System.out.println("Bạn có muốn thay đổi thông tin hành khách này hay không: ");
-                System.out.println("Nhập: 0. Có ---- 1. Không");
+                System.out.println("Nhập: 0. Không ---- 1. Có");
                 int choose = sc.nextInt();
                 switch (choose){
-                    case 0:
+                    case 1:
                         setPassengerRecords(sc, id);
                         break;
-                    case 1:
+                    case 0:
                         break;
                 }
 
