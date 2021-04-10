@@ -1,10 +1,10 @@
-package Pratical.S1_SEM2;
+package pratical.s1_sem2;
 
-public class Motor implements Vehicle{
+public class Car implements Vehicle{
     private String name;
     @Override
     public float moveMax() {
-        return 150;
+       return 250;
     }
 
     public void setName(String name) {
@@ -13,6 +13,6 @@ public class Motor implements Vehicle{
 
     @Override
     public String getName() {
-         return this.name;
+       return this.name;
     }
 }

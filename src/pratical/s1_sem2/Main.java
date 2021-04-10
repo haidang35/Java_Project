@@ -1,4 +1,4 @@
-package Pratical.S1_SEM2;
+package pratical.s1_sem2;
 
 import java.util.Scanner;
 
