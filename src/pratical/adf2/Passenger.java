@@ -1,6 +1,6 @@
 package pratical.adf2;
 
-public class Passenger {
+public class Passenger implements Comparable<Passenger>{
     public Integer id;
     public String name;
     public String address;
@@ -8,6 +8,10 @@ public class Passenger {
     public String goDate;
     public String returnDate;
 
+    @Override
+    public int compareTo(Passenger o) {
+        return 0;
+    }
 
     public Passenger(Integer id, String name, String address, String phoneNumber, String returnDate, String goDate) {
         this.id = id;

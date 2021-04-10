@@ -5,7 +5,11 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class ReservationSystem {
-    public PriorityQueue<Passenger> listPassengers = new PriorityQueue<>();
+    public PriorityQueue<Passenger> listPassengers;
+
+    public ReservationSystem() {
+        listPassengers = new PriorityQueue<Passenger>();
+    }
 
     public void addReservation(Scanner sc){
         System.out.print("Nhập ID đặt chỗ: ");
@@ -44,8 +48,6 @@ public class ReservationSystem {
                 pas.setReturnDate(returnDate);
             }
         }
-
-
     }
     public void modifyPassengerRecords(Scanner sc){
         System.out.println("Nhập vào ID muốn tìm kiếm: ");
@@ -73,16 +75,15 @@ public class ReservationSystem {
         }
     }
     public void displayPassengerRecords(){
-        Iterator<Passenger> i = listPassengers.iterator();
-        while (i.hasNext()){
-            Passenger pas = listPassengers.poll();
-            System.out.println("ID hành khách: " + pas.getId());
-            System.out.println("Tên hành khách: " + pas.getName());
-            System.out.println("Địa chỉ: " + pas.getAddress());
-            System.out.println("Số điện thoại: " + pas.getPhoneNumber());
-            System.out.println("Ngày đi: " + pas.getGoDate());
-            System.out.println("Ngày về: " + pas.getReturnDate());
-            System.out.println("---------------------");
-        }
+       for(Passenger pas: listPassengers){
+           System.out.println("ID hành khách: " + pas.getId());
+           System.out.println("Tên hành khách: " + pas.getName());
+           System.out.println("Địa chỉ: " + pas.getAddress());
+           System.out.println("Số điện thoại: " + pas.getPhoneNumber());
+           System.out.println("Ngày đi: " + pas.getGoDate());
+           System.out.println("Ngày về: " + pas.getReturnDate());
+           System.out.println("---------------------");
+       }
+
     }
 }
